@@ -165,3 +165,4 @@ const styles = StyleSheet.create({
 | borderColor | string | '#148cF0' | Style prop |
 | borderRadius | number | 6 | Style prop |
 | onComplete | function | null | Callback after bar reach the max value prop |
+| useNativeDriver | boolean | false | Optional choise to use Native driver in animations |

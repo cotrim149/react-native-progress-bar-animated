@@ -18,6 +18,7 @@ class ProgressBar extends React.Component {
     this.widthAnimation = new Animated.Value(0);
     this.backgroundAnimation = new Animated.Value(0);
     this.backgroundInterpolationValue = null;
+    this.useNativeDriver = props.useNativeDriver || false;
   }
 
   componentDidMount() {
@@ -61,6 +62,7 @@ class ProgressBar extends React.Component {
       easing: Easing[this.props.barEasing],
       toValue: toValue > 0 ? toValue : 0,
       duration: this.props.barAnimationDuration,
+      useNativeDriver: this.useNativeDriver,
     }).start();
   }
 
@@ -68,6 +70,7 @@ class ProgressBar extends React.Component {
     Animated.timing(this.backgroundAnimation, {
       toValue: 1,
       duration: this.props.backgroundAnimationDuration,
+      useNativeDriver: this.useNativeDriver,
     }).start();
   }
 
